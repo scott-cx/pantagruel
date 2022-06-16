@@ -41,7 +41,7 @@ public class LoginServlet extends GenericServlet {
 			BasicDataSource bds = DataSource.getInstance().getBds();
 			conn = bds.getConnection();
 			stmt = conn.createStatement();
-			String query = " select * from users where id = " + userId;
+			String query = " select * from users;
 	        rs = stmt.executeQuery(query);
 	        while (rs.next()) {
 	        	result.append("<li>" + rs.getInt(1)+ " " + rs.getString(2) + " " + rs.getString(3)+ " " + rs.getString(4)+ " " + rs.getString(5) + "</li>");
